@@ -1,1 +1,2 @@
 export const MODIFY_ENTRY = "MODIFY_ENTRY";
+export const DELETE_ENTRY = "DELETE_ENTRY";

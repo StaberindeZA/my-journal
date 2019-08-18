@@ -26,17 +26,15 @@ class EntryContainer extends React.Component {
 
   onSubjectChange = (event) => {
     this.setState({subject: event.target.value});
-    console.log(this.state.subject);
   }
 
   onEntryChange = (event) => {
     this.setState({entry: event.target.value});
-    console.log(this.state.entry);
   }
 
   onSubmit = (event) => {
     console.log("Submit got pressed");
-    this.props.modifyEntry('4321', 'Sample', 'Sample entry here');
+    this.props.modifyEntry('4321', this.state.subject, this.state.entry);
     event.preventDefault();
   }
 

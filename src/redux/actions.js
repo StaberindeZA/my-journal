@@ -1,18 +1,4 @@
-import { MODIFY_ENTRY } from "./actionTypes";
-
-
-// function modifyEntry(entryId, subject, entry) {
-//   return {
-//     type: MODIFY_ENTRY,
-//     id: entryId,
-//     subject: subject,
-//     entry: entry,
-//   };
-// }
-
-// export {
-//   modifyEntry,
-// };
+import { MODIFY_ENTRY, DELETE_ENTRY } from "./actionTypes";
 
 export const modifyEntry = (entryId, subject, entry) => ({
   type: MODIFY_ENTRY,
@@ -22,3 +8,10 @@ export const modifyEntry = (entryId, subject, entry) => ({
     entry: entry
   }
 });
+
+export const deleteEntry = (entryId) => ({
+  type: DELETE_ENTRY,
+  payload: {
+    id: entryId
+  }
+})

@@ -4,14 +4,27 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
+// React Router
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 // Components
 import EntryContainer from './comp/EntryContainer';
+import Dashboard from './comp/Dashboard';
 
 
 
 function App() {
   return (
-    <EntryContainer />
+    <Router>
+      <div>
+        <Route exact path='/' component={Dashboard} />
+        <Route path='/entry' component={EntryContainer} />
+      </div>
+    </Router>
+    // <div>
+    //   <EntryContainer />
+    //   <Dashboard />
+    // </div>
   );
 }
 
