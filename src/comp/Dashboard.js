@@ -1,6 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+const EntryList = (props) => (
+  <div>
+    
+    <Link to='/entry'>Entry</Link>
+  </div>
+)
+
 class Dashboard extends React.Component {
 
   render() {

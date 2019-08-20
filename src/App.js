@@ -5,22 +5,29 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 
 // React Router
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 // Components
 import EntryContainer from './comp/EntryContainer';
 import Dashboard from './comp/Dashboard';
+import NoMatch from './comp/NoMatch';
 
 
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Route exact path='/' component={Dashboard} />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path='/' render={() => (
+          <Redirect
+            to='/dashboard'
+          />
+        )} />
+        <Route path='/dashboard' component={Dashboard} />
         <Route path='/entry' component={EntryContainer} />
-      </div>
-    </Router>
+        <Route component={NoMatch} />
+      </Switch>
+    </BrowserRouter>
     // <div>
     //   <EntryContainer />
     //   <Dashboard />
